@@ -58,7 +58,7 @@ class SphinxResult {
     
     public function __construct( Array $resultSet ) {
         $this->_rs = $resultSet;
-        $this->_matches = $resultSet['matches'];
+        $this->_matches = array_key_exists('matches', $resultSet) ? $resultSet['matches'] : array();
         $this->_meta = array( 
             'time' => $resultSet['time'],
             'total' => $resultSet['total'],
