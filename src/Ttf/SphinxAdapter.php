@@ -39,7 +39,7 @@ class SphinxAdapter {
     public function search( $query, $catalog ){
         $result = $this->_cl->Query( $query, $catalog );
         if( $result == false ) {
-            throw new Exception( "Sphinx client oops: " . $this->_cl->GetLastError());
+            throw new \Exception( "Sphinx client oops: " . $this->_cl->GetLastError());
         } else {
             if( !empty($result['warning']) ) {
                 return $this->_cl->GetLastWarning();
